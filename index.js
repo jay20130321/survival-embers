@@ -563,7 +563,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 				} else if (path.endsWith('.side.wasm')) {
 					return `${loadPath}.side.wasm`;
 				} else if (path.endsWith('.wasm')) {
-					return `${loadPath}.wasm?v=1795494182`;
+					return `${loadPath}.wasm?v=1795494233`;
 				}
 				return path;
 			},
@@ -666,7 +666,7 @@ const Engine = (function () {
 	Engine.load = function (basePath, size) {
 		if (loadPromise == null) {
 			loadPath = basePath;
-			loadPromise = preloader.loadPromise(`${loadPath}.wasm?v=1795494182`, size, true);
+			loadPromise = preloader.loadPromise(`${loadPath}.wasm?v=1795494233`, size, true);
 			requestAnimationFrame(preloader.animateProgress);
 		}
 		return loadPromise;
@@ -820,7 +820,7 @@ const Engine = (function () {
 				this.config.update(override);
 				// Add main-pack argument.
 				const exe = this.config.executable;
-				const pack = this.config.mainPack || `${exe}.pck?v=1795494182`;
+				const pack = this.config.mainPack || `${exe}.pck?v=1795494233`;
 				this.config.args = ['--main-pack', pack].concat(this.config.args);
 				// Start and init with execName as loadPath if not inited.
 				const me = this;
